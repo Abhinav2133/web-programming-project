@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizSpark | Online Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="QuizSpark home">
+        <span class="brand-mark">Q</span>
+        <span>Quiz<span class="brand-accent">Spark</span></span>
+      </a>
+      <div class="topbar-note"><span class="status-dot"></span> Learn something new today</div>
+    </header>
+
+    <section class="screen welcome-screen active" id="welcomeScreen">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="sparkle">✦</span> THE DAILY KNOWLEDGE CHALLENGE</div>
+        <h1>Make your<br /><span class="gradient-text">mind shine.</span></h1>
+        <p class="hero-description">A little curiosity goes a long way. Take a quick quiz, test what you know, and discover what you can learn next.</p>
+        <div class="hero-stats">
+          <div><strong>10</strong><span>Questions</span></div>
+          <div class="stat-divider"></div>
+          <div><strong>10 min</strong><span>Time limit</span></div>
+          <div class="stat-divider"></div>
+          <div><strong>4</strong><span>Answer choices</span></div>
+        </div>
+      </div>
+
+      <div class="start-card">
+        <div class="card-icon">✧</div>
+        <h2>Ready to play?</h2>
+        <p>Choose a category and see how many questions you can get right.</p>
+        <label for="categorySelect">QUIZ CATEGORY</label>
+        <div class="select-wrap">
+          <select id="categorySelect">
+            <option value="all">Mixed Knowledge</option>
+            <option value="web">Web Development</option>
+            <option value="computer">Computer Fundamentals</option>
+            <option value="general">General Knowledge</option>
+          </select>
+          <span>⌄</span>
+        </div>
+        <div class="rules-row"><span>◷</span><span>10-minute timer starts when you begin</span></div>
+        <div class="rules-row"><span>✓</span><span>Your score appears at the end</span></div>
+        <button class="primary-button" id="startButton">Start the quiz <span>→</span></button>
+        <div class="card-footnote"><span>✦</span> No pressure. Just progress.</div>
+      </div>
+    </section>
+
+    <section class="screen quiz-screen" id="quizScreen">
+      <div class="quiz-heading">
+        <div>
+          <div class="eyebrow">QUIZ IN PROGRESS</div>
+          <h2>You've got this.</h2>
+        </div>
+        <div class="timer-box" id="timerBox">
+          <span class="timer-icon">◷</span>
+          <div><small>TIME LEFT</small><strong id="timerText">10:00</strong></div>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-label"><span id="progressText">QUESTION 01 <span class="muted">/ 10</span></span><span id="answeredText">0 answered</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+
+      <article class="question-card">
+        <div class="question-meta"><span id="categoryPill" class="category-pill">WEB DEVELOPMENT</span><span id="questionNumber">01 / 10</span></div>
+        <h3 id="questionText">Question text goes here?</h3>
+        <p class="choose-hint">Select one answer to continue.</p>
+        <div class="options-list" id="optionsList"></div>
+      </article>
+
+      <div class="quiz-footer">
+        <button class="text-button" id="quitButton">← Exit quiz</button>
+        <div class="footer-right">
+          <span class="keyboard-hint">Take your time</span>
+          <button class="primary-button next-button" id="nextButton">Next question <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen result-screen" id="resultScreen">
+      <div class="result-card">
+        <div class="result-icon" id="resultIcon">🏆</div>
+        <div class="eyebrow">QUIZ COMPLETED</div>
+        <h1 id="resultTitle">Brilliant effort!</h1>
+        <p id="resultMessage">Every quiz is a chance to learn something new.</p>
+        <div class="score-ring" id="scoreRing">
+          <div><strong id="scoreValue">0/10</strong><span>YOUR SCORE</span></div>
+        </div>
+        <div class="result-stats">
+          <div class="result-stat correct-stat"><span>✓</span><strong id="correctCount">0</strong><small>Correct</small></div>
+          <div class="result-stat wrong-stat"><span>×</span><strong id="wrongCount">0</strong><small>Incorrect</small></div>
+          <div class="result-stat"><span>％</span><strong id="percentValue">0%</strong><small>Accuracy</small></div>
+        </div>
+        <button class="primary-button" id="reviewButton">Review answers <span>→</span></button>
+        <button class="secondary-button" id="restartButton">Try another quiz</button>
+      </div>
+      <div class="review-panel" id="reviewPanel" hidden>
+        <div class="review-heading"><h2>Answer review</h2><span id="reviewSummary"></span></div>
+        <div id="reviewList"></div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>© 2026 QuizSpark</span>
+      <span>Built for curious minds <span class="footer-heart">♥</span></span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
